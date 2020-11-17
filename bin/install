@@ -47,8 +47,8 @@ install_richgo() {
     local platform=$(get_platform)
     local arch=$(get_arch)
     # handy for testing
-    if [ -z "$TEMPDIR" ]; then
-      local tmpd=$(mktmp)
+    if [ -z "${TEMPDIR-}" ]; then
+      local tmpd=$(mktemp -d)
     else
       local tmpd=$TEMPDIR
     fi
